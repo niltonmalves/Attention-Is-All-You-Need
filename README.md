@@ -62,6 +62,15 @@ Modelos Recorrentes se baseam na posição do input. Gerando um sequencia de "hi
 $$
 h_t \quad h_{t-1}
 $$
+
+```mathematica
+\forall x \in X, \quad \exists y \leq \epsilon
+```
+
+```latex
+\forall x \in X, \quad \exists y \leq \epsilon
+```
+
 Attention mechanism - 
 
 O modelo transformer evita a utilização de recorrencia, ao invés de depender exclusivamente do mecanismo atention para desenhar dependencias globais entre input e output.
