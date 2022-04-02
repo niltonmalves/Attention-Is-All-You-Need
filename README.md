@@ -62,7 +62,7 @@ ver sobre :
 ##### Duvidas
 
 - [Transduction models](https://machinelearningmastery.com/transduction-in-machine-learning/) -  predicting specific examples given specific examples from a domain
-- Attention mechanism  - mecanismo para o decoder utilizar as partes mais relevantes do input.
+- Attention <img src="https://render.githubusercontent.com/render/math?math=\frac{1}{c} \cdot \int_{1}^8 x^2 dx"> mechanism  - mecanismo para o decoder utilizar as partes mais relevantes do input.
 - Transformer is a new simple network architerutem, that dispense recurrent e convolutions
 - verificar como são os modelos recorrentes e as convolutions
 - Este modelo só serve para  tradução? acho q não! verificar.
