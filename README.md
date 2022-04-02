@@ -1,12 +1,24 @@
 # Attention-Is-All-You-Need
 Attention Is All You Need explained
+
+
+
+<img src="https://render.githubusercontent.com/render/math?math=\frac{1}{c} \cdot \int_{1}^8 x^2 dx">
+
+
 $$
-\frac{1}{c} \cdot \int_{1}^8 x^2 dx 
+\frac{1}{c} \cdot \int_{1}^8 x^2 dx
 $$
 
 $$
 J_{1}^{V}=\left\{W_{1} \in \Omega:\right. \text{Jogador somar 7 pontos}\} \text{ 6 pontos de amostra}
 $$
+
+
+<img src="https://render.githubusercontent.com/render/math?math=J_{1}^{V}=\left\{W_{1} \in \Omega:\right. \text{Jogador somar 7 pontos}\} \quad \text{ 6 pontos de amostra}">
+
+
+
 Attention Is All You Need
 
 https://www.youtube.com/watch?v=iDulhoQ2pro
@@ -18,6 +30,18 @@ https://www.youtube.com/watch?v=OyFJWRnt_AY
 https://towardsdatascience.com/attention-is-all-you-need-discovering-the-transformer-paper-73e5ff5e0634
 
 http://peterbloem.nl/blog/transformers
+
+https://www.youtube.com/watch?v=FWFA4DGuzSc&list=WL&index=3
+
+https://www.youtube.com/watch?v=iH-wmtxHunk
+
+
+
+explicação de word-embeddins
+
+https://www.youtube.com/watch?v=gQddtTdmG_8
+
+
 
 
 
@@ -37,7 +61,7 @@ ver sobre :
 
 ##### Duvidas
 
-- transduction models
+- [Transduction models](https://machinelearningmastery.com/transduction-in-machine-learning/) -  predicting specific examples given specific examples from a domain
 - Attention mechanism  - mecanismo para o decoder utilizar as partes mais relevantes do input.
 - Transformer is a new simple network architerutem, that dispense recurrent e convolutions
 - verificar como são os modelos recorrentes e as convolutions
@@ -63,15 +87,7 @@ $$
 h_t \quad h_{t-1}
 $$
 
-```mathematica
-\forall x \in X, \quad \exists y \leq \epsilon
-```
-
-```latex
-\forall x \in X, \quad \exists y \leq \epsilon
-```
-
-Attention mechanism - 
+- Attention mechanism - 
 
 O modelo transformer evita a utilização de recorrencia, ao invés de depender exclusivamente do mecanismo atention para desenhar dependencias globais entre input e output.
 
