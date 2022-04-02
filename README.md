@@ -29,6 +29,26 @@ Transformer Neural Networks - EXPLAINED! (Attention is all you need)
 
 https://www.youtube.com/watch?v=TQQlZhbC5ps
 
+
+
+aparentemente excelente explicação
+
+https://jalammar.github.io/illustrated-transformer/
+
+
+
+http://nlp.seas.harvard.edu/2018/04/03/attention.html
+
+
+
+https://github.com/tensorflow/tensor2tensor
+
+
+
+https://blog.ml.cmu.edu/2020/03/20/are-sixteen-heads-really-better-than-one/
+
+
+
 ---
 
 
@@ -48,7 +68,7 @@ ver sobre :
 - [Transduction models](https://machinelearningmastery.com/transduction-in-machine-learning/) -  predicting specific examples given specific examples from a domain
 - Attention mechanism  - mecanismo para o decoder utilizar as partes mais relevantes do input. Cuidou do problema dos modelos RNN que só performavam bem em tradução de frases pequenas.
 - Transformer is a new simple network architerutem, that dispense recurrent e convolutions
-- 
+- Como é feito o calculo do self-attetion?
 - verificar como são os modelos recorrentes e as convolutions
 - Este modelo só serve para  tradução? acho q não! verificar.
 - o que é o hidden state
@@ -99,3 +119,37 @@ A maioria dos modelos trandutores tem uma estrutura encoder-decoder. No transfor
 ![image-20220402113908797](imagens/image-20220402113908797.png)
 
 ![image-20220402120226039](imagens/image-20220402120226039.png)
+
+
+
+No transformer a forma de adicionar a informação da posição foi somar o vetor de input embeddings com o vetor de posição.
+
+![image-20220402124611457](imagens/image-20220402124611457.png)
+
+Critérios necessários para o vetor de posição são:
+
+- Encoder único para cada etapa
+
+- distância consistente entre duas etapas 
+
+- Possibilidade de generalizar para sentenças longas
+
+- ser determinístico
+
+  
+
+  #### Solução
+
+  
+
+  ![image-20220402125206569](imagens/image-20220402125206569.png)
+
+![image-20220402125258473](imagens/image-20220402125258473.png)
+
+
+
+---
+
+### Mulit-head Attention
+
+![image-20220402125849361](imagens/image-20220402125849361.png)
