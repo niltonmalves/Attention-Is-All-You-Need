@@ -113,11 +113,20 @@ mecanismo que esconde as palavras do resultado correto, durante a fase de treina
 
 [Video of masked self-attention](https://www.youtube.com/watch?v=piT1_k8b9uM)
 ---
+# Keys and Values
 
+Pegamos a saido do encoder, e fazemos duas copias fazendo duas transformações lineares. Uma delas será a Key e a outra será o Value para todo o selfAttention mecanism.
+O ultimo ingrediente é a Query vem do decoder. O decoder pega a sentenca objetivo e produz um output
+Para o self attetinion.
+
+
+![keys_values](imagens/keys_values.PNG)
+---
 xxxxxxxx
 xxxxxxxx
 ![image-20220402170231562](imagens/1_8eriEDJZisidMG_yyEDEAA.gif)
 
+![xxx](imagens/xxxx.PNG)
 ![xxx](imagens/xxxx.png)
 ![xxx](imagens/xxxx.gif)\\
 trad_encoder.png
