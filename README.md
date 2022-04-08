@@ -204,6 +204,10 @@ https://arxiv.org/pdf/2012.14913.pdf
 An Attentive Survey of Attention Models
 https://arxiv.org/pdf/1904.02874.pdf
 
+
+https://kazemnejad.com/blog/transformer_architecture_positional_encoding/
+
+https://timodenk.com/blog/linear-relationships-in-the-transformers-positional-encoding/
 ---
 
 
