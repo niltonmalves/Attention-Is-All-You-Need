@@ -11,7 +11,7 @@ seq2seq models são compostos basicamente por um encoder e um decoder. O encoder
 
 ![image-20220402170231562](imagens/1_8eriEDJZisidMG_yyEDEAA.gif)
 
-![trad_encoder](imagens/trad_encoder.png)
+![trad_encoder](imagens/trad_encoder.PNG)
 
 ![xxx](imagens/xxxx.png)
 ![xxx](imagens/xxxx.gif)
