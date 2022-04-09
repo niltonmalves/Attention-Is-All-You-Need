@@ -83,7 +83,7 @@ feed_forward_caract
 ![feed_forward_caract](imagens/feed_forward_caract.PNG)
 
 Podemos observar na Figura 2 que neuronios nas camadas mais baixas, capturam frequentemente padrões superficiais, enquanto camadas mais altas capturam padrões semânticos.
- - **Exemplos**:
+ - **Exemplos:
  
  ![table_exemplos_semanticos](imagens/table_exemplos_semanticos.PNG)
  
