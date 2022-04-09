@@ -3,7 +3,7 @@
 
 - **Quais são os diferencias desse modelo**
 
-- **Como é sua estrutura **
+- **Como é sua estrutura**
 
 
 Introdução
