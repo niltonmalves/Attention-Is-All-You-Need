@@ -1,9 +1,9 @@
 
-- ** O que é o modelo Transformer**
+- **O que é o modelo Transformer**
 
-- ** Quais são os diferencias desse modelo**
+- **Quais são os diferencias desse modelo**
 
-- ** Como é sua estrutura **
+- **Como é sua estrutura **
 
 
 Introdução
