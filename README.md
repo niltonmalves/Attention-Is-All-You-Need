@@ -42,6 +42,7 @@ Permitindo um aumento significante de paralelização.
 Para reduzir os cálculos sequenciais é necessário a utilização de convoluções. Porém o número de cálculos necessários cresce linearmente ou logaritmicamente. Fazendo o aprendizado ser mais difícil. No Transformer isto é reduzido à um número constante de cálculos.
 
 ###### Arquitetura do Modelo
+##### Arquitetura do Modelo
 
 
 
