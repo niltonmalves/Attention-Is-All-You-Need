@@ -29,7 +29,7 @@ Modelos Recorrentes se baseiam na posição do input. Gerando uma sequência de 
 
 
 
-#### Attention mechanism  
+######### Attention mechanism  
 
 O modelo transformer evita a utilização de recorrência, ao invés de depender exclusivamente do mecanismo atenttion para desenhar dependências globais entre input e output.
 
