@@ -18,9 +18,9 @@ Estes modelos são compostos basicamente por um encoder e um decoder. O encoder 
 
 - Em 2015 um novo modelo de encoder-decoder com o Attention, para tarefas de tradução. Desde então o mecanismo de Attention, se tornou componente essencial para modelos de sequencia.
 
-Pois ele resolveu umm problema de "perda de memória" para sequencias muito grandes. Pois passou a considerar todos os hidden states e os seus respectivos pesos.
+	Pois ele resolveu umm problema de "perda de memória" para sequencias muito grandes. Pois passou a considerar todos os hidden states e os seus respectivos pesos.
 
-A arquitetura tansformer, proposta no artigo "Attention Is All You Need" não usa processamento sequencial. Mostra que podemos usar apenas o mecanismo "Attention". Permitindo paralelização.
+	A arquitetura tansformer, proposta no artigo "Attention Is All You Need" não usa processamento sequencial. Mostra que podemos usar apenas o mecanismo "Attention". Permitindo paralelização.
 
 ---
 ###### O que é a arquitetura Transformer
