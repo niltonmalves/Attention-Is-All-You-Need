@@ -69,8 +69,29 @@ https://timodenk.com/blog/linear-relationships-in-the-transformers-positional-en
 Self-Attention em detalhe:
  -  - **Primeiro passo** criar 3 vetores a partir de cada input (embedding vector de cada palavra). Criamos 3 vetores o Query, o Key e o Value. Esse vetores foram criados a partir da multiplicação de cada matriz obtida no treinamento com o vetor de embedding.
 
-	- **Segundo passo** calculando o pontuação. Precisamos calcular a pontuação de cada palavra que geralmente vem depois da palavra analisada. Neste exemplo, "Thinking",  será analisado quais palavras tem maiores chance de vir depois dela. O Vetor SCORE é calculado tomando o produto escalar do vetor QUERY com o vetor KEY da respectiva palavra que estamos pontuando. Então, se estivermos processando a self-attention para a palavra na posição #1, a primeira pontuação seria o produto escalar de q1 e k1. A segunda pontuação seria o produto escalar de q1 e k2. 	
+	- **Segundo passo** calculando o pontuação. Precisamos calcular a pontuação de cada palavra que geralmente vem depois da palavra analisada. Neste exemplo, "Thinking",  será analisado quais palavras tem maiores chance de vir depois dela. O Vetor SCORE é calculado tomando o produto escalar do vetor QUERY com o vetor KEY da respectiva palavra que estamos pontuando. Então, se estivermos processando a self-attention para a palavra na posição #1, a primeira pontuação seria o produto escalar de q1 e k1. A segunda pontuação seria o produto escalar de q1 e k2. 
 
+	- **Terceiro e quarto passo** é dividir as pontuações por 8 (a raiz quadrada da dimensão dos vetores chave usados no artigo – 64. Isso leva a ter gradientes mais estáveis. Pode haver outros valores possíveis aqui, mas este é o padrão), então passe o resultado através de uma operação softmax. O Softmax normaliza as pontuações para que sejam todas positivas e somam 1.
+	
+	- **Quinto passo** é multiplicar cada vetor de valor pela pontuação softmax (em preparação para soma-los). A intuição aqui é manter intactos os valores da(s) palavra(s) em que queremos focar e abafar palavras irrelevantes (multiplicando-as por números minúsculos como 0,001, por exemplo).
+	- **Sexto passo** é somar os vetores de valor ponderado. Isso produz a saída da camada de *self-atettion* nesta posição (para a primeira palavra)
+	
+###### Add e Norm
+
+Primeiro calculamos a soma do vetor de output do Attention block e o input Embending Vector. Depois tem uma camada de normalização. Sabemos que a normalização tem os seguintes benefícios:
+
+	- Reduz o viés
+
+	- Impede que os pesos divirgam
+
+	- Permite um treinamento mais rápido.
+
+- Solução: Layer Normalization
+	
+Pegamos a media e a variancia de todas as caracteristicas da sentenca. Depois da normalização teremos matrizes com média zero e variancia 1. Este método se mostrou mais eficiente que o bacth normalization. [Para saber detalhes sobre Layer normalization	](https://arxiv.org/abs/1607.06450)
+
+###### Feed Forward
+	
 ---
 ###### Quais são os diferencias dessa arquitetura
 
