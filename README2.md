@@ -4,7 +4,7 @@ Introdução
 
 Os problemas sequenciais eram resolvidos com RNN e GRNN.
 
-Task como traducao era resolvido com arquitetura de sequencia para sequencia .
+Tarefas como traducao eram resolvidas com arquitetura de sequencia para sequencia .
 Seq2seq sao redes neurais que transformam dada sequencia de elementos, como uma frase, em outra sequencia (exemplo, traducao de texto).
 
 seq2seq models são compostos basicamente por um encoder e um decoder. O encoder pega e sequencia e mapeia uma uma dimensão maior. Este vetor é inserido no decoder que transforma em uma saida sequencial, que pode ser a tradução de uma sentença, por exemplo.

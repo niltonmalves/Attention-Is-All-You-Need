@@ -1,10 +1,43 @@
 
-- **O que é o modelo Transformer**
+- **Antes de A.i.A.Y.N**
 
-- **Quais são os diferencias desse modelo**
+- **O que é a arquitetura Transformer**
+
+- **Quais são os diferencias dessa arquitetura**
 
 - **Como é sua estrutura**
+---
+###### Antes de A.i.A.Y.N
+- RNN, LSTM and Gated recurrent Neural networks estão estabelecidos como os melhores modelos para trabalhar como problemas com sequencia ou transdução (inferência), como tradução.
 
+
+-Modelos Recorrentes se baseiam na posição do input. Gerando uma sequência de "hidden state” <img src="https://render.githubusercontent.com/render/math?math=h_t ">.  O que impede a paralelização do trabalho de treinamento. Além de utilização severa da memória.
+
+- Tarefas como traducao eram resolvidas com arquitetura de sequencia para sequencia que sao redes neurais que transformam dada sequencia de elementos, como uma frase, em outra sequencia (exemplo, traducao de texto).
+Estes modelos são compostos basicamente por um encoder e um decoder. O encoder pega e sequencia e mapeia uma uma dimensão maior. Este vetor é inserido no decoder que transforma em uma saida sequencial, que pode ser a tradução de uma sentença, por exemplo.
+
+- Em 2015 um novo modelo de encoder-decoder com o Attention, para tarefas de tradução. Desde então o mecanismo de Attention, se tornou componente essencial para modelos de sequencia.
+
+Pois ele resolveu umm problema de "perda de memória" para sequencias muito grandes. Pois passou a considerar todos os hidden states e os seus respectivos pesos.
+
+A arquitetura tansformer, proposta no artigo "Attention Is All You Need" não usa processamento sequencial. Mostra que podemos usar apenas o mecanismo "Attention". Permitindo paralelização.
+
+---
+###### O que é a arquitetura Transformer
+Este [artigo](https://arxiv.org/pdf/1706.03762.pdf) propôs uma nova arquitetura, chamada Transformers, que dispensa o uso de modelos recorrentes (classificação e tradução de frases pequenas) e de convoluções.
+
+
+Em tarefas de tradução este modelo teve uma qualidade superior, além de ser "mais paralelizável" e precisou de menos treinamento.
+
+Além disso, o modelo se mostrou generalizável para outras tarefas.
+
+
+
+---
+###### Quais são os diferencias dessa arquitetura
+
+
+---
 
 Introdução
 
@@ -15,7 +48,7 @@ Seq2seq sao redes neurais que transformam dada sequencia de elementos, como uma 
 
 seq2seq models são compostos basicamente por um encoder e um decoder. O encoder pega e sequencia e mapeia uma uma dimensão maior. Este vetor é inserido no decoder que transforma em uma saida sequencial, que pode ser a tradução de uma sentença, por exemplo.
 
-Em 2015 um novo modelo de encoder-decoder com o Attention, para tarefas de tradução. Desde então o mecanismo de Attention, se tornou componente essencial para modeles de sequencia.
+Em 2015 um novo modelo de encoder-decoder com o Attention, para tarefas de tradução. Desde então o mecanismo de Attention, se tornou componente essencial para modelos de sequencia.
 
 Pois ele resolveu umm problema de "perda de memória" para sequencias muito grandes. Pois passou a considerar todos os hidden states e os seus respectivos pesos.
 
