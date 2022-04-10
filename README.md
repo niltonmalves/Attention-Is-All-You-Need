@@ -15,11 +15,11 @@
 - Modelos Recorrentes se baseiam na posição do input. Gerando uma sequência de "hidden state” <img src="https://render.githubusercontent.com/render/math?math=h_t ">.  O que impede a paralelização do trabalho de treinamento. Além de utilização severa da memória.
 
 - Tarefas como traducao eram resolvidas com arquitetura de sequencia para sequencia que sao redes neurais que transformam dada sequencia de elementos, como uma frase, em outra sequencia (exemplo, traducao de texto).
-Estes modelos são compostos basicamente por um encoder e um decoder. O encoder pega e sequencia e mapeia uma uma dimensão maior. Este vetor é inserido no decoder que transforma em uma saida sequencial, que pode ser a tradução de uma sentença, por exemplo.
+Estes modelos são compostos basicamente por um encoder e um decoder. O encoder pega a sequencia e mapeia uma uma dimensão maior. Este vetor é inserido no decoder que transforma em uma saida sequencial, que pode ser a tradução de uma sentença, por exemplo.
 
-- Em 2015 um novo modelo de encoder-decoder com o Attention, para tarefas de tradução. Desde então o mecanismo de Attention, se tornou componente essencial para modelos de sequencia.
+- Em 2015 surgiu um novo modelo de encoder-decoder com o Attention, para tarefas de tradução. Desde então o mecanismo de Attention, se tornou componente essencial para modelos de sequencia.
 
-	Pois ele resolveu umm problema de "perda de memória" para sequencias muito grandes. Pois passou a considerar todos os hidden states e os seus respectivos pesos.
+	Pois ele resolveu um problema de "perda de memória" para sequencias muito grandes. Pois passou a considerar todos os hidden states e os seus respectivos pesos.
 
 
 
@@ -98,7 +98,7 @@ Primeiro calculamos a soma do vetor de output do Attention block e o input Emben
 Pegamos a media e a variancia de todas as caracteristicas da sentenca. Depois da normalização teremos matrizes com média zero e variancia 1. Este método se mostrou mais eficiente que o bacth normalization. [Para saber detalhes sobre Layer normalization	](https://arxiv.org/abs/1607.06450)
 
 #### Feed Forward
-Cada camada do encoder e do decoder, contém uma camada totalmente conectada, que é aplicada a cada posição separadamente e igualmente. Isto consiste em duas transformações lineares com um ativação ReLu entre elas. O Objetivo principal é processar o output um camada Attention de uma forma que melhor sirva o input para a camada Attention seguinte. [Detalhes sobre feed-forward layers, no atirgo "Transformer Feed-Forward Layers Are Key-Value Memories
+Cada camada do encoder e do decoder, contém uma camada totalmente conectada, que é aplicada a cada posição separadamente e igualmente. Isto consiste em duas transformações lineares com um ativação ReLu entre elas. O Objetivo principal é processar o output de uma camada Attention de uma forma que melhor sirva para o input da camada Attention seguinte. [Detalhes sobre feed-forward layers, no atirgo "Transformer Feed-Forward Layers Are Key-Value Memories
 "](https://arxiv.org/pdf/2012.14913.pdf), neste artigo eles encontraram que esta arquitetura era capaz de capturar alguns padrões de caracteristicas linguisticas.
 
 Podemos observar na Figura 2 que neuronios nas camadas mais baixas, capturam frequentemente padrões superficiais, enquanto camadas mais altas capturam padrões semânticos.
