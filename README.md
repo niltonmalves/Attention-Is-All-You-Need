@@ -8,7 +8,7 @@
 - **Quais são os diferencias dessa arquitetura**
 
 ---
-###### Antes de A.i.A.Y.N
+### Antes de A.i.A.Y.N
 - RNN, LSTM and Gated recurrent Neural networks estão estabelecidos como os melhores modelos para trabalhar como problemas com sequencia ou transdução (inferência), como tradução.
 
 
@@ -24,7 +24,7 @@ Estes modelos são compostos basicamente por um encoder e um decoder. O encoder 
 
 
 ---
-###### O que é a arquitetura Transformer
+### O que é a arquitetura Transformer
 Este [artigo](https://arxiv.org/pdf/1706.03762.pdf) propôs uma nova arquitetura, chamada Transformers, que dispensa o uso de modelos recorrentes (classificação e tradução de frases pequenas) e de convoluções.
 
 
@@ -33,12 +33,12 @@ Em tarefas de tradução este modelo teve uma qualidade superior, além de ser "
 Além disso, o modelo se mostrou generalizável para outras tarefas.
 
 ---
-###### Como é sua estrutura
+### Como é sua estrutura
 
-###### Input Embendding
+#### Input Embendding
 - Word Embendding: forma de representar palavras em comformidade com o seu contexto. O vetores que representam as palavras ficam próximos dos vetores utilizados em contexto semelhante. Por exemplo, cachorro está afastado de carro, mesmo tendo proximidade na ordem alfabetica.
 
-###### Positional Encodding
+#### Positional Encodding
 
 
 o proposito é adicionar informação de posicao antes de inserir o embedding no encoder. Pois o transformer foi desenvolvido  originalmente  para tarefas de tradução, e para essas tarefas a posição da informação é bem relevante.
@@ -57,7 +57,7 @@ o proposito é adicionar informação de posicao antes de inserir o embedding no
 
 Os modelos de RNN levam em consideração a posição da informação, já que eles processam a informação sequencialmente. Porém, como essa estrutura foi retirada, deve ser inserido algum mecanismo para considerar a posição da informação e permitir a paralelização.
 
-###### Positional Encodding - Solução
+#### Positional Encodding - Solução
 
 
 Essa foi forma econtrada pelos pesquisadores de atender todos esses critérios.
@@ -72,7 +72,7 @@ https://kazemnejad.com/blog/transformer_architecture_positional_encoding/
 https://timodenk.com/blog/linear-relationships-in-the-transformers-positional-encoding/
 
 
-###### Mulit-head Attention
+#### Mulit-head Attention
 Self-Attention em detalhe:
  -  - **Primeiro passo** criar 3 vetores a partir de cada input (embedding vector de cada palavra). Criamos 3 vetores o Query, o Key e o Value. Esse vetores foram criados a partir da multiplicação de cada matriz obtida no treinamento com o vetor de embedding.
 
@@ -83,7 +83,7 @@ Self-Attention em detalhe:
 	- **Quinto passo** é multiplicar cada vetor de valor pela pontuação softmax (em preparação para soma-los). A intuição aqui é manter intactos os valores da(s) palavra(s) em que queremos focar e abafar palavras irrelevantes (multiplicando-as por números minúsculos como 0,001, por exemplo).
 	- **Sexto passo** é somar os vetores de valor ponderado. Isso produz a saída da camada de *self-atettion* nesta posição (para a primeira palavra)
 	
-###### Add e Norm
+#### Add e Norm
 
 Primeiro calculamos a soma do vetor de output do Attention block e o input Embending Vector. Depois tem uma camada de normalização. Sabemos que a normalização tem os seguintes benefícios:
 
@@ -97,7 +97,7 @@ Primeiro calculamos a soma do vetor de output do Attention block e o input Emben
 	
 Pegamos a media e a variancia de todas as caracteristicas da sentenca. Depois da normalização teremos matrizes com média zero e variancia 1. Este método se mostrou mais eficiente que o bacth normalization. [Para saber detalhes sobre Layer normalization	](https://arxiv.org/abs/1607.06450)
 
-###### Feed Forward
+#### Feed Forward
 Cada camada do encoder e do decoder, contém uma camada totalmente conectada, que é aplicada a cada posição separadamente e igualmente. Isto consiste em duas transformações lineares com um ativação ReLu entre elas. O Objetivo principal é processar o output um camada Attention de uma forma que melhor sirva o input para a camada Attention seguinte. [Detalhes sobre feed-forward layers, no atirgo "Transformer Feed-Forward Layers Are Key-Value Memories
 "](https://arxiv.org/pdf/2012.14913.pdf), neste artigo eles encontraram que esta arquitetura era capaz de capturar alguns padrões de caracteristicas linguisticas.
 
@@ -108,7 +108,7 @@ Podemos observar na Figura 2 que neuronios nas camadas mais baixas, capturam fre
 ![image-20220402172203607](imagens/image-20220402172203607.png)
 
 
-###### Decoder
+#### Decoder
 
 Decoder pode trabalhar em diferentes modos.
 
@@ -121,13 +121,13 @@ Decoder pode trabalhar em diferentes modos.
 
 	Decoder escolhe qual a palavra é a mais provável que seja a tradução mais correta. Enquanto o encoder pode ser executado paralelamente, o decoder precisa ser executado de forma serial, pois ele precisa do resultado da previsão para prever o seguinte.
 
-###### Keys and Values
+#### Keys and Values
 Pegamos a saida do encoder, e fazemos duas copias e aplicamos  duas transformações lineares nelas. Uma delas será a Key e a outra será o Value para todo o self-Attention mecanism. O ultimo ingrediente é a Query vem do decoder. O decoder pega a sentenca objetivo e produz um output Para o self attetinion.
 
 
 
 ---
-###### Quais são os diferencias dessa arquitetura
+### Quais são os diferencias dessa arquitetura
 
 - Paralelizável
 	Tornando o treinamento muito mais rápido
