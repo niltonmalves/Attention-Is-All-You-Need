@@ -3,9 +3,10 @@
 
 - **O que é a arquitetura Transformer**
 
+- **Como é sua estrutura**
+
 - **Quais são os diferencias dessa arquitetura**
 
-- **Como é sua estrutura**
 ---
 ###### Antes de A.i.A.Y.N
 - RNN, LSTM and Gated recurrent Neural networks estão estabelecidos como os melhores modelos para trabalhar como problemas com sequencia ou transdução (inferência), como tradução.
@@ -31,7 +32,44 @@ Em tarefas de tradução este modelo teve uma qualidade superior, além de ser "
 
 Além disso, o modelo se mostrou generalizável para outras tarefas.
 
+---
+###### Como é sua estrutura
 
+###### Input Embendding
+- Word Embendding: forma de representar palavras em comformidade com o seu contexto. O vetores que representam as palavras ficam próximos dos vetores utilizados em contexto semelhante. Por exemplo, cachorro está afastado de carro, mesmo tendo proximidade na ordem alfabetica.
+
+###### Positional Encodding
+o proposito é adicionar informação de posicao antes de inserir o embedding no encoder. Pois o transformer foi desenvolvido  originalmente  para tarefas de tradução, e para essas tarefas a posição da informação é bem relevante.
+
+Os modelos de RNN levam em consideração a posição da informação, já que eles processam a informação sequencialmente. Porém, como essa estrutura foi retirada, deve ser inserido algum mecanismo para considerar a posição da informação e permitir a paralelização.
+
+###### Positional Encodding - Solução
+
+-  Positional Encodding: 
+	Critérios necessários para o vetor de posição são:
+
+		- Encoder único para cada etapa
+
+		- distância consistente entre duas etapas 
+
+		- Possibilidade de generalizar para sentenças longas
+
+		- ser determinístico
+
+Essa foi forma econtrada pelos pesquisadores de atender todos esses critérios.
+
+
+Links de artigos que explicam o motivo para usar essa forma de positional-encoding
+
+https://kazemnejad.com/blog/transformer_architecture_positional_encoding/
+https://timodenk.com/blog/linear-relationships-in-the-transformers-positional-encoding/
+
+
+###### Mulit-head Attention
+Self-Attention em detalhe:
+ -  - **Primeiro passo** criar 3 vetores a partir de cada input (embedding vector de cada palavra). Criamos 3 vetores o Query, o Key e o Value. Esse vetores foram criados a partir da multiplicação de cada matriz obtida no treinamento com o vetor de embedding.
+
+	- **Segundo passo** calculando o pontuação. Precisamos calcular a pontuação de cada palavra que geralmente vem depois da palavra analisada. Neste exemplo, "Thinking",  será analisado quais palavras tem maiores chance de vir depois dela. O Vetor SCORE é calculado tomando o produto escalar do vetor QUERY com o vetor KEY da respectiva palavra que estamos pontuando. Então, se estivermos processando a self-attention para a palavra na posição #1, a primeira pontuação seria o produto escalar de q1 e k1. A segunda pontuação seria o produto escalar de q1 e k2. 	
 
 ---
 ###### Quais são os diferencias dessa arquitetura
