@@ -91,11 +91,42 @@ Primeiro calculamos a soma do vetor de output do Attention block e o input Emben
 Pegamos a media e a variancia de todas as caracteristicas da sentenca. Depois da normalização teremos matrizes com média zero e variancia 1. Este método se mostrou mais eficiente que o bacth normalization. [Para saber detalhes sobre Layer normalization	](https://arxiv.org/abs/1607.06450)
 
 ###### Feed Forward
-	
+Cada camada do encoder e do decoder, contém uma camada totalmente conectada, que é aplicada a cada posição separadamente e igualmente. Isto consiste em duas transformações lineares com um ativação ReLu entre elas. O Objetivo principal é processar o output um camada Attention de uma forma que melhor sirva o input para a camada Attention seguinte. [Detalhes sobre feed-forward layers, no atirgo "Transformer Feed-Forward Layers Are Key-Value Memories
+"](https://arxiv.org/pdf/2012.14913.pdf), neste artigo eles encontraram que esta arquitetura era capaz de capturar alguns padrões de caracteristicas linguisticas.
+
+Podemos observar na Figura 2 que neuronios nas camadas mais baixas, capturam frequentemente padrões superficiais, enquanto camadas mais altas capturam padrões semânticos.
+
+![image-20220402172016115](imagens/image-20220402172016115.png)
+
+![image-20220402172203607](imagens/image-20220402172203607.png)
+
+
+###### Decoder
+
+Decoder pode trabalhar em diferentes modos.
+
+- Modo de Treinamento: Decoder ajusta os parametros da rede.
+	**Masked- Multi-head Attention** : mecanismo que esconde as palavras do resultado correto, durante a fase de treinamento para impedir que o modelo tenha o resultado antes de fazer a previsão e o ajustes dos pesos.
+
+- Modo de teste: Decoder está fazendo a tradução das sentenças.
+
+	**Decoder em fase de teste: (tarefa de tradução)**
+
+	Decoder escolhe qual a palavra é a mais provável que seja a tradução mais correta. Enquanto o encoder pode ser executado paralelamente, o decoder precisa ser executado de forma serial, pois ele precisa do resultado da previsão para prever o seguinte.
+
+###### Keys and Values
+Pegamos a saida do encoder, e fazemos duas copias e aplicamos  duas transformações lineares nelas. Uma delas será a Key e a outra será o Value para todo o self-Attention mecanism. O ultimo ingrediente é a Query vem do decoder. O decoder pega a sentenca objetivo e produz um output Para o self attetinion.
+
+
+
 ---
 ###### Quais são os diferencias dessa arquitetura
 
+- Paralelizável
+	Tornando o treinamento muito mais rápido
+- Generalizável
 
+- 
 ---
 
 Introdução
