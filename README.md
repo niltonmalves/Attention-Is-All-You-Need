@@ -17,9 +17,6 @@ Em tarefas de tradução este modelo teve uma qualidade superior, além de ser "
 
 Além disso, o modelo se mostrou generalizável para outras tarefas.
 
-Em tarefas de tradução este modelo teve uma qualidade superior, além de ser "mais paralelizável" e precisou de menos treinamento.
-
-Além disso, o modelo se mostrou generalizável para outras tarefas.
 
 ##### Introdução
 

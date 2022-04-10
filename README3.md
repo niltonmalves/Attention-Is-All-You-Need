@@ -11,7 +11,7 @@
 - RNN, LSTM and Gated recurrent Neural networks estão estabelecidos como os melhores modelos para trabalhar como problemas com sequencia ou transdução (inferência), como tradução.
 
 
--Modelos Recorrentes se baseiam na posição do input. Gerando uma sequência de "hidden state” <img src="https://render.githubusercontent.com/render/math?math=h_t ">.  O que impede a paralelização do trabalho de treinamento. Além de utilização severa da memória.
+- Modelos Recorrentes se baseiam na posição do input. Gerando uma sequência de "hidden state” <img src="https://render.githubusercontent.com/render/math?math=h_t ">.  O que impede a paralelização do trabalho de treinamento. Além de utilização severa da memória.
 
 - Tarefas como traducao eram resolvidas com arquitetura de sequencia para sequencia que sao redes neurais que transformam dada sequencia de elementos, como uma frase, em outra sequencia (exemplo, traducao de texto).
 Estes modelos são compostos basicamente por um encoder e um decoder. O encoder pega e sequencia e mapeia uma uma dimensão maior. Este vetor é inserido no decoder que transforma em uma saida sequencial, que pode ser a tradução de uma sentença, por exemplo.
@@ -20,7 +20,7 @@ Estes modelos são compostos basicamente por um encoder e um decoder. O encoder 
 
 	Pois ele resolveu umm problema de "perda de memória" para sequencias muito grandes. Pois passou a considerar todos os hidden states e os seus respectivos pesos.
 
-	A arquitetura tansformer, proposta no artigo "Attention Is All You Need" não usa processamento sequencial. Mostra que podemos usar apenas o mecanismo "Attention". Permitindo paralelização.
+
 
 ---
 ###### O que é a arquitetura Transformer
